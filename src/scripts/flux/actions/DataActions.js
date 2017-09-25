@@ -4,7 +4,7 @@ import alt   from 'flux/alt/alt.js';
 class DataActions {
 
     constructor() {
-        const appUrl = 'http://andreypokrovskiy.com/projects/wp-api-react'; // Wordpress installation url
+        const appUrl = 'https://allisonlevine.com/wordpress'; // Wordpress installation url
 
         this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // Endpoint for getting Wordpress Pages
         this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // Endpoint for getting Wordpress Posts
@@ -17,8 +17,8 @@ class DataActions {
                 resolve(response.data);
             }).catch((error) => {
                 reject(error);
-            }); 
-        });     
+            });
+        });
     }
 
     // Method for getting Pages data

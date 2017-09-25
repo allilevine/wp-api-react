@@ -1,10 +1,13 @@
 import {render}             from 'react-dom';
 import DataActions          from 'flux/actions/DataActions.js';
+import css from 'css/style.scss';
 
 import Home                 from 'components/Home.js';
 import About                from 'components/About.js';
 import Contact              from 'components/Contact.js';
 import Header               from 'components/Header.js';
+import Footer               from 'components/Footer.js';
+import Body from 'components/Body.js';
 
 import {
     BrowserRouter as Router,
@@ -29,9 +32,9 @@ class AppInitializer {
                     component={this.templates[page.slug]}
                     path={`/${page.slug}`}
                     exact
-                /> 
+                />
             )
-        })     
+        })
     }
 
     run() {
@@ -42,11 +45,14 @@ class AppInitializer {
                         <Header />
 
                         <Switch>
-                            <Route path="/" component={ Home } exact />
+                            <Route path="/" component={ Body } exact />
+                            <Route path="/contact" component={ Contact } exact />
 
                             {this.buildRoutes(response)}
                             <Route render={() => { return <Redirect to="/" /> }} />
-                        </Switch> 
+                        </Switch>
+
+                        <Footer />
                     </div>
                 </Router>
 

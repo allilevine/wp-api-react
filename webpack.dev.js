@@ -2,7 +2,7 @@ var webpack  			= require('webpack');
 var path				= require('path');
 var HtmlWebpackPlugin 	= require('html-webpack-plugin');
 
-module.exports = {	
+module.exports = {
 	devtool: 'cheap-module-source-map',
 	devServer: {
 		historyApiFallback: true, // This will make the server understand "/some-link" routs instead of "/#/some-link"
@@ -20,15 +20,15 @@ module.exports = {
 	},
 	resolve: {
 		modules: [
-			'node_modules', 
+			'node_modules',
 			'src',
 			path.resolve(__dirname, 'src/scripts'),
 			path.resolve(__dirname, 'node_modules')
 		], // Folders where Webpack is going to look for files to bundle together
-		extensions: ['.jsx', '.js'] // Extensions that Webpack is going to expect
+		extensions: ['.jsx', '.js', '.css', '.scss', '.jpg', '.png', '.gif'] // Extensions that Webpack is going to expect
 	},
 	module: {
-		// Loaders allow you to preprocess files as you require() or “load” them. 
+		// Loaders allow you to preprocess files as you require() or “load” them.
 		// Loaders are kind of like “tasks” in other build tools, and provide a powerful way to handle frontend build steps.
 		loaders: [
 			{
@@ -54,6 +54,27 @@ module.exports = {
 					plugins: ['transform-runtime'],
 					presets: ['es2015', 'stage-0', 'react'],
 				}
+			},
+			{
+				test: /\.css$/,
+				include: [
+					path.resolve(__dirname, "src"),
+				],
+        loader: [ 'style-loader', 'css-loader' ]
+			},
+			{
+				test: /\.scss$/,
+				include: [
+					path.resolve(__dirname, "src"),
+				],
+        loader: [ 'style-loader', 'css-loader', 'sass-loader' ]
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+				include: [
+					path.resolve(__dirname, "src"),
+				],
+				loader: [ 'file-loader' ]
 			}
 		]
 	},

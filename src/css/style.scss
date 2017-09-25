@@ -1,0 +1,324 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1.5; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.header {
+  top: 0;
+  z-index: 1;
+  position: relative;
+  transition: all 0.5s;
+  width: 100%;
+  background: white;
+  font-family: 'Pt Serif', serif;
+  padding: 2em 0;
+  
+  .header-wrap {
+    width: 60%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &.contact-button {
+      border-bottom: 1px solid black;
+      font-size: .9em;
+    }
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      margin: 0 1em 0 0;
+      font-size: .9em;
+    }
+  }
+}
+
+body.fixed-header .header {
+  position: fixed;
+  box-shadow: 0 0 10px rgba(0,0,0,0.14);
+  padding: 1em 0;
+  
+  a.contact {
+    margin-top: -5px;
+  }
+}
+
+
+.page {
+  height: 90vh;
+  
+  .content-wrap {
+    width: 60%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10% 0 0;
+    font-family: 'PT Serif', serif;
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page .content-wrap {
+    width: 90%;
+  }
+  .header .header-wrap {
+    width: 90%;
+  }
+}
+
+.about {
+  //background: -webkit-linear-gradient(90deg, rgb(19, 44, 151), rgb(13, 68, 160));
+  //background: linear-gradient(90deg, rgb(19, 44, 151), rgb(13, 68, 160));
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+  position: relative;
+  
+  .content-wrap {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+  }
+
+  .childDiv {
+    margin-bottom: 1em;
+    
+      div {
+        overflow: hidden;
+        background: white;
+        padding: 1em;
+        box-shadow: 0 0 10px rgba(0,0,0,0.14);
+        display: inline-block;
+        transition: width 1s ease-in;
+      }
+    }
+    
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      margin-right: 1em;
+      float: left;
+    }
+
+    .AboutRight {
+      float: left;
+      width: 83%;
+    }
+    
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    .work-button {
+      display: none;
+      text-decoration: none;
+      
+        button {
+        cursor: pointer;
+        text-align: center;
+        padding: 16px;
+        background: #696969;
+        color: white;
+        border: 0;
+        font-size: .9em;
+        text-transform: uppercase;
+        border: 0;
+        display: block;
+        margin: 0 auto;
+        animation: fadein 1s;
+        box-shadow: 0 0 10px rgba(0,0,0,0.14);
+      }
+    }
+
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about .avatar {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
+  @media screen and (max-width: 320px) {
+    .about .avatar {
+      width: 25px;
+      height: 25px;
+    }
+    .about .content-wrap {
+      font-size: 1em;
+    }
+  }
+
+#work {
+  
+  .content-inner {
+    display: flex;
+    line-height: 30px;
+    font-size: 1.2em;
+    
+    &.content-inner-reverse {
+      flex-direction: row-reverse;
+    }
+    
+    div.page-content, img {
+      margin: 1em;
+    }
+    
+    img {
+      width: 300px;
+      height: auto;
+    }
+    
+    h3 {
+      font-weight: 700;
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+    
+    p {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.page-item {
+  height: 100vh;
+  min-height: 600px;
+  
+  .content-wrap {
+    padding: 4% 0;
+  }
+}
+
+  @media screen and (max-width: 768px) {
+    #work .content-inner {
+      display: table;
+    }
+    .page-item {
+      height: auto;
+      min-height: auto;
+    }
+    #work .content-inner div.page-content, #work .content-inner img {
+      margin: 0;
+    }
+  }
+
+.contact {
+  text-align: center;
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+  min-height: 600px;
+  
+  .content-wrap {
+    padding: 5% 0;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 35px;
+  }
+  
+  label {
+    font-style: italic;
+  }
+
+  textarea, input[type="email"] {
+    display: block;
+    width: 100%;
+    margin: 1.5em auto;
+    background: transparent;
+    font-size: 1.5em;
+    border: 2px dashed white;
+    color: white;
+    
+    &:focus {
+      outline: none !important;
+      background: rgba(105, 105, 105, 0.3);
+    }
+  }
+  
+  input[type="email"] {
+    width: 30%
+  }
+  input[type="submit"] {
+    padding: 16px;
+    background: #696969;
+    color: white;
+    border: 0;
+    font-size: .9em;
+    text-transform: uppercase;
+  }
+  
+  .error-container p {
+    background: white;
+    padding: 16px;
+    margin-bottom: 1em;
+  }
+}
+
+footer {
+  text-align: center;
+  background: #303030;
+  color: white;
+  font-family: 'Pt Serif', serif;
+  font-size: .8em;
+  padding: 2em 0;
+
+  ul {
+    li {
+      display: inline-block;
+      padding: 0 1em;
+      
+      a {
+        color: white;
+      }
+      
+      strong {
+        font-weight: 700;
+      }
+    }
+  }
+}

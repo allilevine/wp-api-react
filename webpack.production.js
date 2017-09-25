@@ -51,6 +51,27 @@ module.exports = {
 					plugins: ['transform-runtime'],
 					presets: ['es2015', 'stage-0', 'react'],
 				}
+			},
+			{
+				test: /\.css$/,
+				include: [
+					path.resolve(__dirname, "src"),
+				],
+        loader: [ 'style-loader', 'css-loader' ]
+			},
+			{
+				test: /\.scss$/,
+				include: [
+					path.resolve(__dirname, "src"),
+				],
+        loader: [ 'style-loader', 'css-loader', 'sass-loader' ]
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+				include: [
+					path.resolve(__dirname, "src"),
+				],
+				loader: [ 'file-loader' ]
 			}
 		]
 	},

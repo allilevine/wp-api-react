@@ -24,18 +24,18 @@ class DataStore {
     }
 
     // Returns all pages and posts
-    getAll() { 
-        return this.getState().data; 
+    getAll() {
+        return this.getState().data.d.Title;
     }
 
     // Returns all Pages
-    getAllPages() { 
-        return this.getState().data.pages; 
+    getAllPages() {
+        return this.getState().data.pages;
     }
 
     // Returns all Posts
-    getAllPosts() { 
-        return this.getState().data.posts; 
+    getAllPosts() {
+        return this.getState().data.posts;
     }
 
     // Returns a Page by provided slug
